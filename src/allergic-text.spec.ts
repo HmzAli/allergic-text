@@ -78,11 +78,22 @@ describe('AllergicText.createCharacters()', function () {
         AllergicText.cached = []
         this.ele = document.createElement('div')
         this.ele.innerText = 'This is just a healthy text'
+        this.charLength = this.ele.innerText.length
         this.color = 'red'
     })
 
     it('should create characters as span elements', () => {
         let aText = AllergicText.create(this.ele, this.color)
         expect(aText.characters[0].$element.tagName.toLowerCase()).toBe('span')
+    })
+
+    it('The number of texts in AllergicText should match the number of created span', () => {
+        let aText = AllergicText.create(this.ele, this.color)
+        expect(aText.characters.length).toBe(this.charLength)
+    })
+
+    it('The text in AllergicText should all be converted to span', () => {
+        let aText = AllergicText.create(this.ele, this.color)
+        expect(aText.characters.every(c => c.$element.tagName.toLowerCase() === 'span'))
     })
 })

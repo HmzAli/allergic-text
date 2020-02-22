@@ -51,6 +51,7 @@ export class AllergicText {
         this.characters = this.$element.innerText.split('').map(char => {
             let c = document.createElement('span')
             c.innerText = char
+            this.$element.appendChild(c)
             return new Character(c, this.color)
         })
     }
