@@ -1,10 +1,12 @@
-import { CursorSubject, CursorPosition, CursorObserver } from './types'
+import { CursorSubject, CursorPosition, CursorObserver } from './interfaces'
 
 export class Cursor implements CursorSubject {
     position: CursorPosition
     observers: CursorObserver[]
 
     constructor() {
+        this.position = {x: 0, y: 0}
+        this.observers = []
         window.addEventListener('mousemove', e => this.observers.forEach(o => {
             o.update({x: e.clientX, y: e.clientY})
         }))

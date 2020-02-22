@@ -8,11 +8,13 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine', 'karma-typescript'],
     files: [
-      'src/**/*.ts'
+      'src/**/*.ts',
+      'tests/**/*.spec.ts'
     ],
     exclude: [],
     preprocessors: {
-      'src/**/*.ts': 'karma-typescript'
+      'src/**/*.ts': 'karma-typescript',
+      'tests/**/*.ts': 'karma-typescript'
     },
     reporters: ['progress'],
     port: 9876,

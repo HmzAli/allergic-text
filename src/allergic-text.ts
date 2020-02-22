@@ -11,6 +11,7 @@ export class AllergicText {
         const cursor = Cursor.get_or_create()
         this.$element = $element
         this.color = color
+        this.characters = []
 
         this.createCharacters()
         this.characters.forEach(c => cursor.addObserver(c))

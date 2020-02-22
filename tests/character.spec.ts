@@ -1,4 +1,4 @@
-import { Character } from './character'
+import { Character } from '../src/character'
 
 describe('character.update()', function () {
     let $element = document.createElement('span')
@@ -11,12 +11,12 @@ describe('character.update()', function () {
 
     it('should change color based on cursor position', () => {
         character.update({x: 100, y: 200})
-        expect(character.$element.style.color).toBe('rgb(223, 0, 0)')
+        expect(character.$element.style.color).toBe('rgb(32, 0, 0)')
 
         character.update({x: 467, y: 13})
-        expect(character.$element.style.color).toBe('rgb(255, 0, 0)')
+        expect(character.$element.style.color).toBe('rgb(0, 0, 0)')
 
         character.update({x: 0, y: 200})
-        expect(character.$element.style.color).toBe('rgb(200, 0, 0)')
+        expect(character.$element.style.color).toBe('rgb(55, 0, 0)')
     })
 })

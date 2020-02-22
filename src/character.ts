@@ -1,7 +1,7 @@
 import {
     CursorObserver,
     CursorPosition 
-} from './types'
+} from './interfaces'
 
 import {
     pixelToColor,

@@ -1,4 +1,4 @@
-import { AllergicText } from './allergic-text'
+import { AllergicText } from '../src/allergic-text'
 
 describe('AllergicText.create()', function () {
     this.validElement = null

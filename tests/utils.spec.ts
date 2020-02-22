@@ -2,7 +2,7 @@ import {
     getValueInRange, 
     distanceFromCursor,
     pixelToColor
-} from './utils'
+} from '../src/utils'
 
 describe('getValueInRange()', function () {
     it('should return correct value', () => {
@@ -23,12 +23,12 @@ describe('distanceFromCursor()', () => {
 
 describe('pixelToColor()', () => {
     it('should get the correct color for specified pixel and color name', () => {
-        expect(pixelToColor(100, 'red')).toBe('rgb(100,0,0)')
-        expect(pixelToColor(-10, 'red')).toBe('rgb(0,0,0)')
-        expect(pixelToColor(1000, 'red')).toBe('rgb(255,0,0)')
-        expect(pixelToColor(150, 'blue')).toBe('rgb(0,0,150)')
-        expect(pixelToColor(255, 'blue')).toBe('rgb(0,0,255)')
-        expect(pixelToColor(10, 'green')).toBe('rgb(0,10,0)')
-        expect(pixelToColor(1000, 'green')).toBe('rgb(0,255,0)')
+        expect(pixelToColor(100, 'red')).toBe('rgb(155,0,0)')
+        expect(pixelToColor(0, 'red')).toBe('rgb(255,0,0)')
+        expect(pixelToColor(1000, 'red')).toBe('rgb(0,0,0)')
+        expect(pixelToColor(150, 'blue')).toBe('rgb(0,0,105)')
+        expect(pixelToColor(255, 'blue')).toBe('rgb(0,0,0)')
+        expect(pixelToColor(10, 'green')).toBe('rgb(0,245,0)')
+        expect(pixelToColor(1000, 'green')).toBe('rgb(0,0,0)')
     })
 })

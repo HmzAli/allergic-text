@@ -1,4 +1,4 @@
-import { CursorPosition } from './types'
+import { CursorPosition } from './interfaces'
 import { Cursor } from './cursor'
 
 export const getValueInRange = (value: number, min: number, max: number): number =>  {
@@ -10,6 +10,6 @@ export const distanceFromCursor = (cPos: CursorPosition): number => {
 }
 
 export const pixelToColor = (pixels: number, colorName: string): string => {
-    const value = getValueInRange(pixels, 0, 255)
+    const value = 255 - getValueInRange(pixels, 0, 255)
     return `rgb(${colorName === 'red' ? value : 0},${colorName === 'green' ? value : 0},${colorName === 'blue' ? value : 0})`
 }
