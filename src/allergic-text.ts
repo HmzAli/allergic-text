@@ -5,7 +5,7 @@ export class AllergicText {
     $element: HTMLElement
     characters: Character[]
     color: string
-    static cached
+    static cached: AllergicText[]
     
     constructor($element: HTMLElement, color: string) {
         const cursor = Cursor.get_or_create()
@@ -17,8 +17,16 @@ export class AllergicText {
         this.characters.forEach(c => cursor.addObserver(c))
     }
 
-    static getByElement($element: HTMLElement) {
-        return AllergicText.cached.find(at => at.$element.isSameNode($element))
+    static getByElement($element: HTMLElement): AllergicText | null {
+        let match: AllergicText | null = null
+
+        AllergicText.cached.forEach((at: AllergicText) => {
+            if (at.$element.isSameNode($element)) {
+                match = at
+            }
+        })
+        return match || null
+        // return AllergicText.cached.find((at: AllergicText) => at.$element.isSameNode($element))
     }
 
     static create($element: HTMLElement, color: string) {
