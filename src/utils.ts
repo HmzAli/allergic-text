@@ -1,4 +1,4 @@
-import { CursorPosition, ElementPosition } from './interfaces'
+import { CursorPosition, ElementPosition } from './interfaces.ts'
 import { Cursor } from './cursor'
 
 export const getValueInRange = (value: number, min: number, max: number): number =>  {

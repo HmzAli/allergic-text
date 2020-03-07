@@ -2,12 +2,12 @@ import {
     CursorObserver,
     CursorPosition,
     ElementPosition
-} from './interfaces'
+} from './interfaces.ts'
 
 import {
     pixelToColor,
     distanceFromCursor
-} from './utils'
+} from './utils.ts'
 
 export class Character implements CursorObserver {
     $element: HTMLElement
@@ -19,7 +19,6 @@ export class Character implements CursorObserver {
 
     update(cPos: CursorPosition): void {
         const ePos: ElementPosition = this.$element.getBoundingClientRect()
-        this.$element.innerText = String(distanceFromCursor(ePos, cPos)) // For testing
         this.$element.style.color = pixelToColor(distanceFromCursor(ePos, cPos), this.targetColor)
     }
 }

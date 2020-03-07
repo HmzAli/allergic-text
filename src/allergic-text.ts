@@ -1,5 +1,5 @@
-import { Cursor } from './cursor'
-import { Character } from './character'
+import { Cursor } from './cursor.ts'
+import { Character } from './character.ts'
 
 class AllergicText {
     $element: HTMLElement
