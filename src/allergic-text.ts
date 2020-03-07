@@ -14,7 +14,11 @@ class AllergicText {
         this.characters = []
 
         this.createCharacters()
-        this.characters.forEach(c => cursor.addObserver(c))
+        this.characters.forEach(c => {
+            if (/[\w]/i.test(c.$element.innerText)) {
+                cursor.addObserver(c)
+            }
+        })
     }
 
     static getByElement($element: HTMLElement): AllergicText | null {

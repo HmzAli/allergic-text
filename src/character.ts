@@ -6,6 +6,7 @@ import {
 
 import {
     pixelToColor,
+    pixelToScale,
     distanceFromCursor
 } from './utils.ts'
 

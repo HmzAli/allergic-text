@@ -17,3 +17,7 @@ export const pixelToColor = (pixels: number, colorName: string): string => {
     const value = 255 - getValueInRange(pixels, 0, 255)
     return `rgb(${colorName === 'red' ? value : 0},${colorName === 'green' ? value : 0},${colorName === 'blue' ? value : 0})`
 }
+
+export const pixelToScale = (pixels: number, maxScaleValue: number): string => {
+    return String(maxScaleValue - getValueInRange(pixels, 1, maxScaleValue))
+}
