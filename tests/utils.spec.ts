@@ -15,9 +15,12 @@ describe('getValueInRange()', function () {
 
 describe('distanceFromCursor()', () => {
     it('should return correct distance from cursor', () => {
-        expect(distanceFromCursor({x: 100, y: 100})).toBe(141)
-        expect(distanceFromCursor({x: 150, y: 60})).toBe(161)
-        expect(distanceFromCursor({x: 0, y: 1000})).toBe(1000)
+        /* The difference: {x: 100, y: 100} */
+        expect(distanceFromCursor({x: 400, y: 300}, {x: 300, y: 200})).toBe(141)
+        /* {x: 150, y: 60} */
+        expect(distanceFromCursor({x: 350, y: 160}, {x: 200, y: 100})).toBe(161)
+        /* {x: 0, y: 1000} */
+        expect(distanceFromCursor({x: 20, y: 2000}, {x: 20, y: 1000})).toBe(1000)
     })
 })
 

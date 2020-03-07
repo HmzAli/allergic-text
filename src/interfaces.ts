@@ -3,6 +3,11 @@ interface CursorPosition {
     y: number
 }
 
+interface ElementPosition {
+    x: number
+    y: number
+}
+
 interface CursorSubject {
     observers: CursorObserver[]
     addObserver: (o: CursorObserver) => void
@@ -16,5 +21,6 @@ interface CursorObserver {
 export {
     CursorPosition,
     CursorSubject,
-    CursorObserver
+    CursorObserver,
+    ElementPosition
 }

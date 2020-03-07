@@ -1,12 +1,12 @@
 import { Cursor } from './cursor'
 import { Character } from './character'
 
-export class AllergicText {
+class AllergicText {
     $element: HTMLElement
     characters: Character[]
     color: string
     static cached: AllergicText[]
-    
+
     constructor($element: HTMLElement, color: string) {
         const cursor = Cursor.get_or_create()
         this.$element = $element
@@ -57,7 +57,9 @@ export class AllergicText {
     }
 
     createCharacters(): void {
-        this.characters = this.$element.innerText.split('').map(char => {
+        const text = this.$element.innerText
+        this.$element.innerText = ''
+        this.characters = text.split('').map(char => {
             let c = document.createElement('span')
             c.innerText = char
             this.$element.appendChild(c)
@@ -67,3 +69,7 @@ export class AllergicText {
 }
 
 AllergicText.cached = []
+
+export {
+    AllergicText
+}

@@ -1,6 +1,7 @@
 import {
     CursorObserver,
-    CursorPosition 
+    CursorPosition,
+    ElementPosition
 } from './interfaces'
 
 import {
@@ -17,6 +18,8 @@ export class Character implements CursorObserver {
     }
 
     update(cPos: CursorPosition): void {
-        this.$element.style.color = pixelToColor(distanceFromCursor(cPos), this.targetColor)
+        const ePos: ElementPosition = this.$element.getBoundingClientRect()
+        this.$element.innerText = String(distanceFromCursor(ePos, cPos)) // For testing
+        this.$element.style.color = pixelToColor(distanceFromCursor(ePos, cPos), this.targetColor)
     }
 }
