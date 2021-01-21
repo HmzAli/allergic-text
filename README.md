@@ -4,7 +4,7 @@ Transforms texts nodes of selected element into objects that observe and react t
 
 This library only works with block elements that can contain text `p`, `div`, etc
 
-See `demo.html` for illustration
+Download or clone the repo then see `demo.html` for illustration
 
 ### Development
 
